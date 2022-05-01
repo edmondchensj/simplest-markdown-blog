@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' type='text/css' href="../lib/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href="../style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <a href="../index.html" id="logo">Your Blog Name</a>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="mt-2" id="post"></div>
+            </div>
+        </div>
+        <div id="footer">
+            Copyright 2022
+        </div>
+    </div>
+</body>
+
+<script src="../lib/showdown.min.js"></script>
+
+<!-- UPDATE NAME OF THE POST JS FILE -->
+<script type="module">
+    import { post } from "./sample-post.js";
+    document.getElementById("post").innerHTML = new showdown.Converter().makeHtml(post);
+</script>

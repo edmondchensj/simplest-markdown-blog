@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' type='text/css' href="./lib/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href="./style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <a href="../index.html" id="logo">Your Blog Name</a>
+        <div class="row px-2">
+            <div class="col-md-6 mx-auto">
+                <div id="post-list"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div id="page-directory"></div>
+        </div>
+
+        <div id="footer">
+            Copyright 2022
+        </div>
+    </div>
+</body>
+
+<script src="./lib/jquery.min.js"></script>
+
+<script type="module">
+    const posts = new Map();
+
+    // DEFINE POSTS-PER-PAGE 
+    const postsPerPage = 2;
+
+    // ADD POST HERE IN ORDER OF DISPLAY
+    posts.set("2022-04-1", {"title": "Sample Post 3", "url": "./posts/sample-post.html"})
+    posts.set("2022-03-1", {"title": "Sample Post 2", "url": "./posts/sample-post-2.html"})
+    posts.set("2022-02-1", {"title": "Sample Post", "url": "./posts/sample-post.html"})
+
+    // DO NOT TOUCH BELOW
+    $(document).ready(function() {
+        setPosts(1); 
+        setPageDirectory(1);
+    })
+
+    function setPosts(pageNumber) {
+        var postListHTML = "";
+        var count = 0;
+        const minPostIndex = postsPerPage * (pageNumber - 1);
+        const maxPostIndex = minPostIndex + postsPerPage - 1;
+        for (let [key, val] of posts) {
+            if (count >= minPostIndex && count <= maxPostIndex) {
+                postListHTML += `
+                    <a class='post-link lead' href="${val['url']}"">
+                        ${val["title"]}
+                    </a>
+                    <div class="post-subtitle">
+                        ${key}
+                    </div>
+                `   
+            }
+            count += 1;
+        }
+        document.getElementById("post-list").innerHTML = postListHTML;
+    }
+    
+    function setPageDirectory(currentPage) {
+        let numPosts = posts.size;
+        let numPages = Math.ceil(numPosts / postsPerPage);
+
+        if (numPages > 1) {
+            var pagesHTML = "";
+            for (let i=1; i<=numPages; i++) {
+                var pageText = "";
+                if (i == currentPage) {
+                    pageText = `<b>${i}</b>`;
+                } else {
+                    pageText = `${i}`;
+                }
+                pagesHTML += `
+                    <a class="page-number mx-1" id="${i}" href="#">${pageText}</a>
+                `
+            }
+            document.getElementById("page-directory").innerHTML = pagesHTML;
+        }
+        updatePostsOnPageNumClick();
+    }
+
+    function updatePostsOnPageNumClick() {
+        $(".page-number").on("click", function() {
+            let pageNumber = parseInt($(this).attr("id"));
+            setPosts(pageNumber);
+            setPageDirectory(pageNumber);
+        })
+    }
+</script>
