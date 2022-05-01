@@ -1,7 +1,12 @@
 # The simplest markdown blog
 
+## Background
+The emergence of static site generators have introduced a way for developers to do away with databases hosting (like in a Content Management System e.g. WordPress) and retain the ability to write blog posts in templates, using an easy-to-use language like Markdown. 
+
 ## Problem
-This project arose out of a frustration with static site generators (SSGs). SSGs such as Jekyll and Hugo not only require installation of dependencies, but also memorisation of their own unique build-deploy steps. Gatsby, another SSG, also takes up a significant amount of disk space at over 1GB. I wanted a Markdown-based blog that was as close to vanilla frontend (HTML/CSS/JS) as possible for high customisability, low disk space use, and without need to memorise how to install dependencies and the build-deploy process.
+This project arose out of a frustration with static site generators (SSGs). SSGs such as Jekyll and Hugo not only require installation of dependencies, but also memorisation of their own unique build-deploy steps. Gatsby, another SSG, also takes up a significant amount of disk space at over 1GB. 
+
+I wanted a Markdown-based blog that was as close to vanilla frontend (HTML/CSS/JS) as possible for high customisability, low disk space use, and without need to memorise how to install dependencies and the build-deploy process.
 
 ## Solution
 This is a simple markdown-based blog that involves no installation of dependencies, no build step, and is extremely lightweight. Frontend helper packages are located in the `lib` folder and are used sparingly. It does not require tedious memorisation of backend install-build-deploy steps. 
