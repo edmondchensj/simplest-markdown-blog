@@ -14,6 +14,3 @@ This is a paragraph. This is a **bold statement**.
     </tr>
 </table>
 `
-
-/* DO NOT CHANGE */
-//document.getElementById("post").innerHTML = new showdown.Converter().makeHtml(post);
