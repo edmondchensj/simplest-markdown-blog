@@ -4,7 +4,7 @@
 The emergence of static site generators has helped developers do away with databases hosting (like in a Content Management System such as WordPress) and write blog posts in templates, using an easy-to-use language like Markdown. 
 
 ## Problem
-This project arose out of a frustration with static site generators (SSGs). SSGs such as Jekyll and Hugo not only require installation of dependencies, but also memorisation of their own unique build-deploy steps. Gatsby, another SSG, also takes up a significant amount of disk space at over 1GB. 
+This project arose out of a frustration with static site generators (SSGs). SSGs such as Jekyll and Hugo require developers to be familiar with their unique ecosystem, including backend runtime and handling of dependencies. Gatsby, another SSG, also takes up a significant amount of disk space due to its dependency on ReactJS. 
 
 I wanted a Markdown-based blog that was highly customisable, lightweight (low disk space), and does need to require me to memorise a complicated installation-build-deploy process.
 
