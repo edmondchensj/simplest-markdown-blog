@@ -6,7 +6,7 @@ The emergence of static site generators has helped developers do away with datab
 ## Problem
 This project arose out of a frustration with static site generators (SSGs). SSGs such as Jekyll and Hugo require developers to be familiar with their unique ecosystem, including backend runtime and handling of dependencies. Gatsby, another SSG, also takes up a significant amount of disk space due to its dependency on ReactJS. 
 
-I wanted a Markdown-based blog that was highly customisable, lightweight (low disk space), and does need to require me to memorise a complicated installation-build-deploy process.
+I wanted a Markdown-based blog that was highly customisable and lightweight, and does not require me to memorise a complicated installation-build-deploy process.
 
 ## Solution
 I created a simple markdown-based blog written in as close to vanilla HTML/CSS/Javascript as possible. It involves three external libraries that I downloaded and packaged in a single repository (Bootstrap for CSS, JQuery for reducing Javascript code, and Showdown for converting Markdown to HTML).
