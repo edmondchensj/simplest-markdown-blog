@@ -33,7 +33,7 @@ You will need a live HTTP server because web browsers enforce a CORS policy that
 
 Just run `python -m SimpleHTTPServer`.
 
-Then visit `https://localhost:8000`. 
+Then visit `http://localhost:8000`. *NOTE*: Use http, not https, as SimpleHTTPServer may not work with SSL.
 
 ## Deployment
 Simply push the source code to Netlify or any static hosting service. 
